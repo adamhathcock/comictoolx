@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comictoolx", "comictoolx.csproj", "{5AB40AD5-FACC-44DF-A296-AF885D5637EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnrar.Mono", "..\..\Test\NUnrar.Mono\NUnrar.Mono.csproj", "{05624D31-A457-47DA-9D0B-633E14687052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05624D31-A457-47DA-9D0B-633E14687052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05624D31-A457-47DA-9D0B-633E14687052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05624D31-A457-47DA-9D0B-633E14687052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05624D31-A457-47DA-9D0B-633E14687052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB40AD5-FACC-44DF-A296-AF885D5637EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB40AD5-FACC-44DF-A296-AF885D5637EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB40AD5-FACC-44DF-A296-AF885D5637EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB40AD5-FACC-44DF-A296-AF885D5637EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = comictoolx.csproj
+	EndGlobalSection
+EndGlobal

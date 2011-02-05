@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppDelegate.cs">
+    <Files>
+      <File FileName="../../MonoMac/monomac/samples/GlossyClock/ClockView.cs" Line="99" Column="46" />
+      <File FileName="Main.cs" Line="1" Column="1" />
+      <File FileName="MainWindowController.cs" Line="46" Column="1" />
+      <File FileName="MainWindow.xib.designer.cs" Line="50" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/MainWindow.xib.designer.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/MainWindowController.cs" Line="65" Column="3" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/BrowseData.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/DragDelegate.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/BrowseItem.cs" Line="1" Column="1" />
+      <File FileName="AppDelegate.cs" Line="49" Column="1" />
+      <File FileName="MainMenu.xib.designer.cs" Line="19" Column="39" />
+      <File FileName="MainWindow.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/Main.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/SkinnableApp/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="../../MonoMac/monomac/samples/SkinnableApp/MainWindowController.cs" Line="43" Column="21" />
+      <File FileName="../../MonoMac/monomac/samples/SkinnableApp/Main.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
