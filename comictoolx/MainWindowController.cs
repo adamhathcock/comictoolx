@@ -41,7 +41,7 @@ namespace comictoolx
 		// Shared initialization code
 		void Initialize ()
 		{
-			
+			ShouldCascadeWindows = false;
 		}
 
 		#endregion
@@ -86,7 +86,10 @@ namespace comictoolx
 			{
 				LoadCurrentEntry ();
 				imageView.ZoomImageToFit (this);
+			} else {
+				imageView.SetImageimageProperties (new NSImage ().AsCGImage (RectangleF.Empty, null, null), new NSDictionary ());
 			}
+			
 		}
 		
 		public void MoveToNext ()

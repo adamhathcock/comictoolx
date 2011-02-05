@@ -21,7 +21,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="7"/>
+			<integer value="3"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -51,8 +51,8 @@
 			<object class="NSWindowTemplate" id="748157544">
 				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{639, 178}, {606, 648}}</string>
-				<int key="NSWTFlags">611844096</int>
+				<string key="NSWindowRect">{{639, 202}, {606, 648}}</string>
+				<int key="NSWTFlags">610271232</int>
 				<string key="NSWindowTitle">comictoolx</string>
 				<string key="NSWindowClass">MainWindow</string>
 				<nil key="NSViewClass"/>
@@ -276,9 +276,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{792, 277}, {606, 648}}</string>
+					<string>{{639, 202}, {606, 648}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{792, 277}, {606, 648}}</string>
+					<string>{{639, 202}, {606, 648}}</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

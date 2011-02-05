@@ -27,6 +27,7 @@ namespace comictoolx
 		// Shared initialization code
 		void Initialize ()
 		{
+			FrameAutosaveName = "ComicWindow";			
 		}
 		
 		#endregion

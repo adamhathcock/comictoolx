@@ -73,4 +73,7 @@
       <Name>NUnrar.Mono</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="testicon.icns" />
+  </ItemGroup>
 </Project>
