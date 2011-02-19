@@ -65,6 +65,7 @@
     <Compile Include="Model\RarComic.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\RarPage.cs" />
+    <Compile Include="Enumerable.Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainMenu.xib" />
