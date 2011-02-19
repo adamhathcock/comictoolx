@@ -13,10 +13,8 @@ namespace comictoolx
 {
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
-		private RarArchive archive;
-		private List<RarArchiveEntry> files;
-		private RarArchiveEntry currentImageEntry;
-		
+		private Comic comic;
+
 		#region Constructors
 
 		// Called when created from unmanaged code
@@ -50,31 +48,20 @@ namespace comictoolx
 		public new MainWindow Window {
 			get { return (MainWindow)base.Window; }
 		}
-		
-		internal MonoMac.ImageKit.IKImageView ImageView
-		{
-			get 
-			{
-				return imageView;
-			}
+
+		internal MonoMac.ImageKit.IKImageView ImageView {
+			get { return imageView; }
 		}
-		
+
 		public void FileToLoad (string file)
 		{
-			archive = RarArchive.Open (file);
-			files = archive.Entries.Where (e => e.FilePath.EndsWith ("jpg")).OrderBy (e => e.FilePath).ToList ();
-			currentImageEntry = files.First ();
+			comic = new RarComic (file);
 			Window.Title = Path.GetFileName (file);
 		}
-		
+
 		public void LoadCurrentEntry ()
-		{				
-			MemoryStream ms = new MemoryStream ();
-			currentImageEntry.WriteTo (ms);
-			
-			byte[] i = ms.ToArray ();
-			
-			var nsImage = new NSImage (NSData.FromArray (i));
+		{
+			var nsImage = new NSImage (NSData.FromArray (comic.CurrentPage.Bytes));
 			var image = nsImage.AsCGImage (RectangleF.Empty, null, null);
 			imageView.SetImageimageProperties (image, new NSDictionary ());
 		}
@@ -82,8 +69,7 @@ namespace comictoolx
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
-			if (currentImageEntry != null)
-			{
+			if (comic != null) {
 				LoadCurrentEntry ();
 				imageView.ZoomImageToFit (this);
 			} else {
@@ -91,24 +77,17 @@ namespace comictoolx
 			}
 			
 		}
-		
+
 		public void MoveToNext ()
 		{
-			int index = files.IndexOf (currentImageEntry);
-			if (index < files.Count)
-			{
-				index++;
-				currentImageEntry = files[index];
+			if (comic.MoveToNext ()) {
 				LoadCurrentEntry ();
 			}
 		}
-		
+
 		public void MoveToPrevious ()
 		{
-			int index = files.IndexOf (currentImageEntry);
-			if (index > 0) {
-				index--;
-				currentImageEntry = files[index];
+			if (comic.MoveToPrevious ()) {
 				LoadCurrentEntry ();
 			}
 		}
