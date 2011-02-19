@@ -1,14 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace comictoolx
 {
-	public abstract class Comic
+	public abstract class Comic : IDisposable
 	{
 		public Comic (string file)
 		{
 			FileName = file;
 			Open (file);
+			CurrentPage = Pages.First ();
 		}
 
 		public string FileName { get; private set; }
@@ -52,9 +55,8 @@ namespace comictoolx
 			}
 			return false;
 		}
-	}
-	
-	
-	
+		
+		public abstract void Dispose ();
+	}	
 }
 

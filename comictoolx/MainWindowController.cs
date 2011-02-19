@@ -1,13 +1,8 @@
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using NUnrar;
-using System.IO;
-using MonoMac.CoreGraphics;
 using System.Drawing;
+using System.IO;
+using MonoMac.AppKit;
+using MonoMac.Foundation;
 
 namespace comictoolx
 {
@@ -52,10 +47,53 @@ namespace comictoolx
 		internal MonoMac.ImageKit.IKImageView ImageView {
 			get { return imageView; }
 		}
+		
+		#region Open
+		internal void OpenComic (AppDelegate d)
+		{
+			NSOpenPanel openPanel = new NSOpenPanel ();
+			openPanel.AllowedFileTypes = new string[] { "cbr" };
+			openPanel.BeginSheet (Window, new NSSavePanelComplete (r => TryLoad (d, openPanel.Url)));
+		}
+
+		private void TryLoad (AppDelegate d, NSUrl url)
+		{
+			if (url == null) {
+				Window.Close ();
+			} else {
+				FileToLoad (url.Path);
+				LoadCurrentEntry ();
+				Window.MakeKeyAndOrderFront (this);
+				d.AddWindowController (this);
+			}
+		}
+		#endregion
 
 		public void FileToLoad (string file)
 		{
-			comic = new RarComic (file);
+			switch (Path.GetExtension (file).ToLowerInvariant ()) {
+			case ".cbr":
+				
+				{
+					comic = new RarComic (file);
+				}
+
+				break;
+			case ".cbz":
+				
+				
+				{
+					comic = new ZipComic (file);
+				}
+
+				break;
+			default:
+				
+				{
+					throw new InvalidOperationException ("Unknown extension on file: " + file);
+				}
+
+			}
 			Window.Title = Path.GetFileName (file);
 		}
 

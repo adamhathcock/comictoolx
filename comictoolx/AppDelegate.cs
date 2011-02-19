@@ -1,18 +1,13 @@
-using System;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
-using MonoMac.ImageKit;
-using MonoMac.CoreGraphics;
 using System.Collections.Generic;
 using System.Linq;
+using MonoMac.AppKit;
+using MonoMac.Foundation;
 
 namespace comictoolx
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{
-		List<MainWindowController> controllers = new List<MainWindowController> ();
+		private List<MainWindowController> controllers = new List<MainWindowController> ();
 
 		public AppDelegate ()
 		{
@@ -21,6 +16,12 @@ namespace comictoolx
 		public override bool ApplicationShouldTerminateAfterLastWindowClosed (NSApplication sender)
 		{
 			return true;
+		}
+		
+		public override void FinishedLaunching (NSObject notification)
+		{
+			MainWindowController mwc = new MainWindowController ();
+			mwc.OpenComic (this);
 		}
 
 		partial void zoomIn (MonoMac.AppKit.NSMenuItem sender)
@@ -46,21 +47,12 @@ namespace comictoolx
 		partial void openComic (MonoMac.AppKit.NSMenuItem sender)
 		{
 			MainWindowController mwc = new MainWindowController ();
-			NSOpenPanel openPanel = new NSOpenPanel ();
-			openPanel.AllowedFileTypes = new string[] { "cbr" };
-			openPanel.BeginSheet (mwc.Window, new NSSavePanelComplete (r => TryLoad (mwc, openPanel.Url)));
+			mwc.OpenComic (this);
 		}
 
-		private void TryLoad (MainWindowController mwc, NSUrl url)
+		internal void AddWindowController (MainWindowController mwc)
 		{
-			if (url == null) {
-				mwc.Window.Close ();
-			} else {
-				mwc.FileToLoad (url.Path);
-				mwc.LoadCurrentEntry ();
-				mwc.Window.MakeKeyAndOrderFront (this);
-				controllers.Add (mwc);
-			}
+			controllers.Add (mwc);
 		}
 
 		partial void closeComic (MonoMac.AppKit.NSMenuItem sender)

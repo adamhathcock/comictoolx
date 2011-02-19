@@ -1,23 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MainWindowController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
     <Files>
       <File FileName="../../MonoMac/monomac/samples/GlossyClock/ClockView.cs" Line="99" Column="46" />
-      <File FileName="Main.cs" Line="1" Column="1" />
-      <File FileName="MainWindowController.cs" Line="44" Column="33" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/MainWindow.xib.designer.cs" Line="1" Column="1" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/MainWindowController.cs" Line="65" Column="3" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/BrowseData.cs" Line="1" Column="1" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/DragDelegate.cs" Line="1" Column="1" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/BrowseItem.cs" Line="1" Column="1" />
-      <File FileName="AppDelegate.cs" Line="69" Column="33" />
-      <File FileName="MainMenu.xib.designer.cs" Line="47" Column="1" />
-      <File FileName="MainWindow.cs" Line="30" Column="38" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/AppDelegate.cs" Line="1" Column="1" />
       <File FileName="../../MonoMac/monomac/samples/ImageKitDemoStep1/Main.cs" Line="1" Column="1" />
       <File FileName="../../MonoMac/monomac/samples/SkinnableApp/MainWindow.cs" Line="1" Column="1" />
       <File FileName="../../MonoMac/monomac/samples/SkinnableApp/MainWindowController.cs" Line="43" Column="21" />
       <File FileName="../../MonoMac/monomac/samples/SkinnableApp/Main.cs" Line="1" Column="1" />
+      <File FileName="Main.cs" Line="14" Column="30" />
+      <File FileName="MainWindowController.cs" Line="69" Column="21" />
+      <File FileName="MainWindow.cs" Line="30" Column="38" />
+      <File FileName="Model/RarComic.cs" Line="19" Column="4" />
+      <File FileName="Model/Comic.cs" Line="2" Column="6" />
+      <File FileName="Model/Page.cs" Line="10" Column="25" />
+      <File FileName="Model/RarPage.cs" Line="24" Column="1" />
+      <File FileName="AppDelegate.cs" Line="18" Column="4" />
+      <File FileName="Enumerable.Extensions.cs" Line="12" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

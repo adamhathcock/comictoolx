@@ -7,6 +7,7 @@ namespace comictoolx
 	public class RarComic : Comic
 	{
 		private RarArchive archive;
+		
 		public RarComic (string file) : base(file)
 		{
 		}
@@ -15,7 +16,10 @@ namespace comictoolx
 		{
 			archive = RarArchive.Open (file);
 			Pages = archive.Entries.Where (e => IsValidImage (e.FilePath)).OrderBy (ex => ex.FilePath).Select (f => new RarPage (f)).ToList<Page> ();
-			CurrentPage = Pages.First ();
+		}
+		
+		public override void Dispose ()
+		{			
 		}
 	}
 }
