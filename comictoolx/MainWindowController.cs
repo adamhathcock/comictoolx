@@ -102,6 +102,23 @@ namespace comictoolx
 			var nsImage = new NSImage (NSData.FromArray (comic.CurrentPage.Bytes));
 			var image = nsImage.AsCGImage (RectangleF.Empty, null, null);
 			imageView.SetImageimageProperties (image, new NSDictionary ());
+			
+			imageView.ZoomImageToFit (this);
+			CalculateAndSet();
+			imageView.ZoomImageToFit (this);
+		}
+		
+		public void CalculateAndSet()
+		{
+			PointF location = Window.Frame.Location;
+			var rect = new RectangleF (location, imageView.ImageSize);
+			Console.WriteLine(rect.Height +  " " + rect.Width);
+			//Window.SetFrame (rect, true, true);
+			float percent = Window.Frame.Height/rect.Height;
+			Console.WriteLine(percent + " " + Window.Frame.Height + " " + rect.Height);
+			rect = new RectangleF (location, new SizeF(rect.Width * percent, rect.Height * percent));
+			Console.WriteLine(rect.Height +  " " + rect.Width);
+			Window.SetFrame (rect, true, true);
 		}
 
 		public override void AwakeFromNib ()

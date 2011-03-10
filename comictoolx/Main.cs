@@ -10,6 +10,7 @@ namespace comictoolx
 	{
 		static void Main (string[] args)
 		{
+			args.ForEach( a => NSAlert.WithMessage(a, "OK", null, null, null));
 			NSApplication.Init ();
 			NSApplication.Main (args);
 		}

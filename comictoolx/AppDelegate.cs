@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoMac.AppKit;
 using MonoMac.Foundation;
+using System.Drawing;
+using System;
 
 namespace comictoolx
 {
@@ -26,12 +28,30 @@ namespace comictoolx
 
 		partial void zoomIn (MonoMac.AppKit.NSMenuItem sender)
 		{
+			SizeF size = KeyController.Window.Frame.Size;
 			KeyController.ImageView.ZoomIn (this);
+			ResetWindowFromPreviousSize (size);
 		}
 
 		partial void zoomOut (MonoMac.AppKit.NSMenuItem sender)
 		{
+			SizeF size = KeyController.Window.Frame.Size;
 			KeyController.ImageView.ZoomOut (this);
+			ResetWindowFromPreviousSize (size);
+		}
+		
+		private void ResetWindowFromPreviousSize (SizeF oldSize)
+		{
+			PointF oldLocation = KeyController.Window.Frame.Location;
+			SizeF newSize =	oldSize;//new SizeF (oldSize.Width * ( 1- KeyController.ImageView.ZoomFactor), 				oldSize.Height * (1 - KeyController.ImageView.ZoomFactor));
+			
+			PointF newLocation = new PointF(oldLocation.X + (newSize.Width - oldSize.Width)/ 2, oldLocation.Y);
+			
+			Console.WriteLine ("oldSize " + oldSize);
+			Console.WriteLine("oldLocation " + oldLocation);
+			Console.WriteLine ("newSize " + newSize);
+			Console.WriteLine ("newLocation " + newLocation);
+			KeyController.Window.SetFrame (new RectangleF (newLocation, newSize), true, true);
 		}
 
 		partial void zoomActual (MonoMac.AppKit.NSMenuItem sender)
